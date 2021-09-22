@@ -15,7 +15,7 @@
             <span class="gallery_centered_text">GALLERY</span>
         </div>
         <GalleryDetails
-            :cards="cards"
+            :galleries="cards"
         />
     </div>
 </template>
@@ -28,35 +28,50 @@
         },
         data: () => ({
             cards: [
-                { 
-                    name: 'WAKESURF', 
-                    url: require('../assets/image3.png'),
+                 {
+                  name: 'GALLERY NAME',
+                  photos: '10 photos'
                 },
-                { 
-                    name: 'WAKEBOARD', 
-                    url: require('../assets/5ir5E9FvTBk.png'),
-                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
-                    btn: 'READ MORE'
+                {
+                  name: 'GALLERY NAME',
+                  photos: '22 photos'
                 },
-                { 
-                    name: 'HYDROFOIL', 
-                    url: require('../assets/MaskGroup.png'),
+                {
+                  name: 'GALLERY NAME',
+                  photos: '12 photos'
                 },
-    
-                { 
-                    name: 'KITESURF', 
-                    url: require('../assets/Mask1Group.png'),
+                {
+                  name: 'GALLERY NAME',
+                  photos: '2 photos'
                 },
-                { 
-                    name: 'WING FOIL', 
-                    url: require('../assets/Mask2Group.png'),
+                {
+                  name: 'GALLERY NAME',
+                  photos: '8 photos'
                 },
+                {
+                    name: 'GALLERY NAME',
+                    photos: '16 photos'
+                },
+                {
+                    name: 'GALLERY NAME',
+                    photos: '20 photos'
+                }
             ]
         })
     }
 </script>
 
 <style scoped>
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+        url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+        url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .gallery_title {
         text-align: center;
         margin-top: 60px;

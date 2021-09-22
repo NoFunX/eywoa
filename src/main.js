@@ -3,6 +3,17 @@ import App from './App.vue'
 import router from './router'
 import Vuetify from 'vuetify/lib'
 import vuetify from './plugins/vuetify'
+// import VueGoogleMaps from 'vue2-google-maps'
+// Vue.use(VueGoogleMaps, {
+
+// load: {
+
+// key: 'AIzaSyBydORIMnpNVpr5gnG_984ytWHe63XjcbY',
+
+
+// }
+
+// });
 
 Vue.use(Vuetify)
 

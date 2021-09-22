@@ -15,11 +15,14 @@
             <span class="contact_centered_text">CONTACT</span>
         </div>
         <p class="contact_text">For any info, inquiry, bookings please contact</p>
-        <div class="contact_main">
+        <!-- <div class="contact_main">
             <div class="contact_main_centered">
                 <img src="@/assets/dude.png">
                 <p class="contact_main_centered_text">Yas Island, Abu Dhabi</p>
             </div>
+        </div> -->
+        <div class="contact_main">
+            <iframe id="map" src="https://snazzymaps.com/embed/340110" width="1400px" height="600px" style="border:none;"></iframe>
         </div>
         <div class="contact_content">
             <div class="contact_section">
@@ -101,6 +104,7 @@
 </template>
 
 <script>
+
 export default {
     data: () => ({
         info: [
@@ -130,12 +134,22 @@ export default {
                 mail: 'Mail',
                 message: 'Your message'
             }
-        ]
-    })
+        ],
+    }),
 }
 </script>
 
 <style scoped>
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+        url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+        url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .contact {
        max-width: 1400px;
        width: 100%;
@@ -194,6 +208,16 @@ export default {
     }
     .contact_centered_text {
         cursor: pointer;
+        font-family: Avenir Next Cyr, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+        opacity: 0.5;
     }
     .contact_content {
         display: flex;
@@ -285,7 +309,6 @@ export default {
         background: #000000;
         max-width: 76px;
         width: 100%;
-        text-align: center;
         border: 1px solid rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
         border-radius: 88px;

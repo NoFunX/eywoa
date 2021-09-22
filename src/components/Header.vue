@@ -49,13 +49,20 @@
         { name: 'Book Now', path: '/book_now' },
       ]
     }),
-    created(){
-      console.log(this.$route)
-    }
   }
 </script>
 
 <style scoped>
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+    url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+    url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+  }
   .header {
     padding: 0 2%;
     max-width:  1400px;
@@ -69,8 +76,8 @@
   }
   .header_container {
     display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
+    justify-content: space-between;
+    
   }
 
   .header_container_menu {

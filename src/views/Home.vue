@@ -47,27 +47,44 @@
       GalleryDetails
     },
     data: () => ({
-      billet: ['WAKESURF', 'WAKEBOARD', 'KITSURF'],
+      billet: ['WAKESURF', 'WAKEBOARD', 'KITSURF', 'HYDROFOIL', 'WINGFOIL'],
       value: 'WAKESURF',
       data: {
         desc: 'Ready to ride?',
-        btn: 'Reverse now'
+        btn: 'Reserve now'
       }
     }),
     methods: {
-      getValue(){
-        this.billet.forEach(e => {
-          setTimeout(() => {
-            this.value = e
-          }, 1000)
-        })
-      
-      }
+      getValue(index){
+        console.log(index)
+        this.value = this.billet[index]
+      },
+    },
+    mounted () {
+      let index = 0
+      setInterval(() => {
+        if (index < this.billet.length) {
+          this.value = this.billet[index] 
+          index += 1
+        } else {
+          index = 0
+        }
+      }, 2000)
     }
   }
 </script>
 
 <style scoped>
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+    url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+    url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+  }
   .information {
     text-align: center;
     width: 1400px;

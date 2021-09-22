@@ -57,6 +57,16 @@
 </script>
 
 <style scoped>
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+        url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+        url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .sports_title {
         text-align: center;
         margin-top: 60px;

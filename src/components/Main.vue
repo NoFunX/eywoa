@@ -3,7 +3,12 @@
         class="main"
         :class="{ wrapper: data.btn}"
     >
-        <div class="main_layer">
+        <div 
+            :class="{ 
+                wrapper_layer: data.btn,
+                main_layer: !data.btn
+            }"
+        >
             <img 
                 v-if="data.img"
                 :src="data.img"
@@ -45,6 +50,16 @@
 </script>
 
 <style scoped>
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+        url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+    url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .main {
         display: inline-block;
         background-image: url("../assets/main.png");
@@ -56,6 +71,7 @@
         position: relative;
         left: 50%;
         transform: translate(-50%);
+        transition-duration: 1s;
     }
     .wrapper {
         display: inline-block;
@@ -64,10 +80,22 @@
         max-width: 1400px;
         width: 100%;
         height: 800px;
-        margin: 100px auto;
+        margin: 0px auto 0 auto;
         position: relative;
     }
     .main_layer {
+        background: rgba(22, 34, 57, 0.75);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition-duration: 2s;
+    }
+    .main_layer:hover {
+        background: transparent;
+    }
+    .wrapper_layer {
         background: rgba(22, 34, 57, 0.75);
         position: absolute;
         top: 0;

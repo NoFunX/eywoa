@@ -28,15 +28,13 @@
     box-sizing: border-box
   }
 
-  /* body {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  } */
-
+@font-face {
+  font-family: Avenir Next Cyr, sans-serif;
+  src: url('fonts/avenirnextcyr-bold.woff') format('woff'),
+  url('fonts/avenirnextcyr-bold.woff2') format('woff2');
+}
   .v-main {
-    margin: 60px auto;
+    margin: 60px auto 0 auto;
     max-width: 1400px;
     width: 100%;
   }

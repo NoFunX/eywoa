@@ -84,6 +84,16 @@
 </script>
 
 <style scoped>
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+        url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: Avenir Next Cyr;
+        src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+        url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .header_wrapper_menu {
         font-family: Avenir Next Cyr, sans-serif;
         font-style: normal;
@@ -104,8 +114,6 @@
         max-width: 500px !important;
         width: 100%;
         height: 785px;
-        top: 0 !important;
-        left: 0 !important
     }
 
     .card_menu {

@@ -4,11 +4,13 @@
         v-for="(gallery, index) of galleries"
         :key="index"
         class="cards_gallery"
-        :class="{ cards_gallery_long: gallery.photos === '22 photos' }"
+        :class="{ cards_gallery_long: gallery.photos === '22 photos' || gallery.photos === '16 photos'  }"
       >
         <h1 
           class="cards_gallery_title"
-          :class="{ cards_gallery_title_long: gallery.photos === '22 photos' }"
+          :class="{ 
+            cards_gallery_title_long: gallery.photos === '22 photos'
+          }"
         >
           {{ gallery.name }}
         </h1>
@@ -25,25 +27,25 @@ export default {
             type: Array,
             default: () => [
                 {
-                name: 'GALLERY NAME',
-                photos: '10 photos'
+                  name: 'GALLERY NAME',
+                  photos: '10 photos'
                 },
                 {
-                name: 'GALLERY NAME',
-                photos: '22 photos'
+                  name: 'GALLERY NAME',
+                  photos: '22 photos'
                 },
                 {
-                name: 'GALLERY NAME',
-                photos: '12 photos'
+                  name: 'GALLERY NAME',
+                  photos: '12 photos'
                 },
                 {
-                name: 'GALLERY NAME',
-                photos: '2 photos'
+                  name: 'GALLERY NAME',
+                  photos: '2 photos'
                 },
                 {
-                name: 'GALLERY NAME',
-                photos: '8 photos'
-                }
+                  name: 'GALLERY NAME',
+                  photos: '8 photos'
+                },
             ]
         }
     }
@@ -51,12 +53,21 @@ export default {
 </script>
 
 <style scoped>
+    @font-face {
+      font-family: Avenir Next Cyr;
+      src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+      url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: Avenir Next Cyr;
+      src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+      url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+    }
     .cards {
       margin: 60px auto 100px auto;
-      display: grid;
-      grid-template-columns: repeat(3, 400px);
-      grid-column-gap: 2%;
-      grid-row-gap: 2%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       max-width: 1300px;
       width: 100%;
   }
@@ -67,6 +78,7 @@ export default {
     height: 400px;
     background: #E9E9E9;
     position: relative;
+    margin-top: 4%
   }
   .cards_gallery_title {
     font-family: Avenir Next Cyr,sans-serif;
