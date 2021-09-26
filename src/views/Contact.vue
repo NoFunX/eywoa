@@ -15,15 +15,15 @@
             <span class="contact_centered_text">CONTACT</span>
         </div>
         <p class="contact_text">For any info, inquiry, bookings please contact</p>
-        <!-- <div class="contact_main">
+        <div class="contact_main">
             <div class="contact_main_centered">
                 <img src="@/assets/dude.png">
                 <p class="contact_main_centered_text">Yas Island, Abu Dhabi</p>
             </div>
-        </div> -->
-        <div class="contact_main">
-            <iframe id="map" src="https://snazzymaps.com/embed/340110" width="1400px" height="600px" style="border:none;"></iframe>
         </div>
+        <!-- <div class="contact_main">
+            <iframe id="map" src="https://snazzymaps.com/embed/340110" width="1400px" height="600px" style="border:none;"></iframe>
+        </div> -->
         <div class="contact_content">
             <div class="contact_section">
                 <div 
@@ -79,23 +79,14 @@
                     >
                         {{ element.text }}
                     </span>
-                    <v-text-field
-                        class="contact_mail"
-                        color="#000000"
-                        light
-                        dense
+                    <input 
+                        class="contact_mail" 
                         placeholder="MAIL"
-                        hide-details
                     >
-                    </v-text-field>
-                    <v-text-field
-                        class="contact_message"
-                        color="#000000"
-                        hide-details
-                        dense
+                    <input 
+                        class="contact_message" 
                         placeholder="YOUR MESSAGE"
                     >
-                    </v-text-field>
                     <button class="contact_button">Send</button>
                 </div>
             </div>
@@ -278,7 +269,9 @@ export default {
         margin-bottom: 0px !important;
     }
     .contact_mail {
-        margin-top: 75px;
+        outline: 0;
+        padding: 0 0 10px 0;
+        margin-top: 60px;
         max-width: 486px;
         width: 100%;
         font-family: Avenir Next Cyr, sans-serif;
@@ -287,11 +280,19 @@ export default {
         font-size: 24px;
         line-height: 37px;
         color: #000000;
-        border-bottom: 2px solid #000000
+        border-bottom: 2px solid #000000;
+        
     }
+
+    .contact_mail::placeholder {
+        color: #000000 !important;
+    }
+    
     .contact_message {
-        margin-top: 57px;
+        outline: 0;
+        padding: 0 0 10px 0;
         max-width: 486px;
+        margin-top: 60px;
         width: 100%;
         font-family: Avenir Next Cyr, sans-serif;
         font-style: normal;
@@ -306,6 +307,7 @@ export default {
     }
     .contact_button {
         padding: 10px 20px;
+        display: block;
         background: #000000;
         max-width: 76px;
         width: 100%;
@@ -320,7 +322,7 @@ export default {
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: #FFFFFF;
-        margin: 20% auto;
+        margin-top: 8%
     }
     button:hover {
         opacity: 0.8

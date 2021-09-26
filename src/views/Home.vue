@@ -23,7 +23,11 @@
       <h1 
         class="information_title"
       >
-        LEARN HOW TO <span class="information_title_billet">{{ value }}</span> <br> IN ABU DHABI
+        LEARN HOW TO 
+        <transition name="fade">
+          <span v-show ="switcher" class="information_title_billet">{{ value }}</span>
+        </transition> <br> 
+        IN ABU DHABI
       </h1>
       <p class="information_paragraph">Lessons are given by ex-pro and qualified instructions</p>
       <button class="information_btn">Book Now</button>
@@ -52,7 +56,8 @@
       data: {
         desc: 'Ready to ride?',
         btn: 'Reserve now'
-      }
+      },
+      switcher : true
     }),
     methods: {
       getValue(index){
@@ -63,8 +68,9 @@
     mounted () {
       let index = 0
       setInterval(() => {
-        if (index < this.billet.length) {
-          this.value = this.billet[index] 
+        this.switcher = !this.switcher
+        if (index < this.billet.length) { 
+          this.value = this.billet[index]
           index += 1
         } else {
           index = 0
@@ -84,6 +90,13 @@
     font-family: Avenir Next Cyr;
     src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
     url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all 8s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0
   }
   .information {
     text-align: center;
@@ -128,7 +141,9 @@
   }
   .information_title_billet {
     color: #FFFFFF;
-    background-color: #000000
+    display: inline-block;
+    background-color: #000000;
+    width: 400px!important;
   }
   .information_paragraph {
     margin-top: 42px;

@@ -34,6 +34,8 @@
                         :src="network"
                         class="mr-4"
                         color="white"
+                        style="cursor: pointer"
+                        @click="$router.push({path: '/contact'})"
                     >
                 </div>
                 <span class="card_content_text">We answer immediately</span>

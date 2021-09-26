@@ -1,6 +1,10 @@
 <template>
     <div class="cards">
         <div
+            @click="
+              (card.name === 'CUSTOM BOARDS' ? $router.push({path: '/brands/loa_boards'}) : null)  ||
+              (card.img2 ? $router.push({path: '/feedback'}) : null)
+            "
             v-for="(card, index) of cards"
             :key="index"
             :style="{
@@ -10,7 +14,8 @@
               'width': '100%',
               'height': '400px',
               'position': 'relative',
-              'margin-top': '4%'
+              'margin-top': '4%',
+              'cursor': 'pointer'
             }
             "
             :class="{
@@ -60,26 +65,32 @@
             <div
               v-if="!card.url && card.img2"
             >
-            <img class="cards_card_quotes" :src="card.quotes">
-            <p class="cards_card_quote"> {{ card.desc }}</p>
-            <div class="cards_card_named">
-                <img class="mr-4" :src="card.img">
-                <span class="cards_card_name"> {{ card.name}}</span>
-            </div>
-            <img
-                @click="changeReview(card)" 
-                :src="card.img2"
-                class="cards_card_img"
-            >
-            </div>
-            <div
-              v-if="card.name === '06:00 - 18:00'"
-            >
-            <div class="cards_card_centered">
-                <h1 class="cards_card_centered_title">{{ card.name }}</h1>
-                <span class="cards_card_centered_desc">{{ card.desc }}</span>
-            </div>
-            <button class="cards_card_centered_btn"> {{ card.btn }} </button>
+              <img class="cards_card_quotes" :src="card.quotes">
+              <transition name="report">
+                <p v-if="switcher" class="cards_card_quote"> {{ card.desc }}</p>
+              </transition>
+                <div class="cards_card_named">
+                  <transition name="report">
+                    <img v-if="switcher" class="mr-4" :src="card.img">
+                  </transition>
+                  <transition name="report">
+                    <span v-if="switcher" class="cards_card_name"> {{ card.name}}</span>
+                  </transition>
+                </div>
+              <img
+                  @click.stop="changeReview(card)" 
+                  :src="card.img2"
+                  class="cards_card_img"
+              >
+              </div>
+              <div
+                v-if="card.name === '06:00 - 18:00'"
+              >
+              <div class="cards_card_centered">
+                  <h1 class="cards_card_centered_title">{{ card.name }}</h1>
+                  <span class="cards_card_centered_desc">{{ card.desc }}</span>
+              </div>
+              <button class="cards_card_centered_btn"> {{ card.btn }} </button>
             </div>
             <div
               v-if="card.name === 'CUSTOM BOARDS'"
@@ -179,7 +190,8 @@ export default {
          name: 'Daniel Alvares'
         }
       ],
-      currentReview: 0
+      currentReview: 0,
+      switcher: true
     }),
     methods: {
       changeReview(card) {
@@ -197,6 +209,7 @@ export default {
     mounted(){
       if(this.cards.length === 11){
           setInterval(() => {
+            this.switcher = !this.switcher
             if (this.currentReview < this.reviews.length) {
               this.cards[2].desc = this.reviews[this.currentReview].desc
               this.cards[2].name = this.reviews[this.currentReview].name  
@@ -222,6 +235,12 @@ export default {
     font-family: Avenir Next Cyr;
     src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
     url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+  }
+  .report-enter-active, .report-leave-active {
+    transition: all 1s;
+  }
+  .report-enter, .report-leave-to {
+    opacity: 0
   }
   .cards {
     margin: 60px auto 100px auto;
@@ -412,6 +431,7 @@ export default {
     max-width: 850px !important;
     width: 100% !important;
     height: 400px;
+    cursor: pointer
   }
   .cards_card_custom_boards {
     font-family: Avenir Next Cyr, sans-serif;
