@@ -28,15 +28,24 @@
                 class="card_content"
             >  
                 <div class="card_content_networks">
-                    <img 
-                        v-for="(network, index) of networks"
-                        :key="index"
-                        :src="network"
-                        class="mr-4"
-                        color="white"
-                        style="cursor: pointer"
-                        @click="$router.push({path: '/contact'})"
+                    <svg
+                        @click="$router.push({ path: '/contact'})"
+                        class="card_content_networks_icon"
                     >
+                        <use xlink:href="@/assets/sprite.svg#inst_contact"></use>
+                    </svg>
+                    <svg
+                        @click="$router.push({ path: '/contact'})"
+                        class="card_content_networks_icon"
+                    >
+                        <use xlink:href="@/assets/sprite.svg#facebook_contact"></use>
+                    </svg>
+                    <svg
+                        @click="$router.push({ path: '/contact'})"    
+                        class="card_content_networks_icon"
+                    >
+                        <use xlink:href="@/assets/sprite.svg#viber_contact"></use>
+                    </svg>
                 </div>
                 <span class="card_content_text">We answer immediately</span>
             </div>
@@ -75,9 +84,9 @@
           ]
       ],
       networks: [
-            require('@/assets/1.png'),
-            require('@/assets/2.png'), 
-            require('@/assets/3.png'),
+            '@/assets/sprite.svg#1',
+            '@/assets/sprite.svg#2', 
+            '@/assets/sprite.svg#3',
         ]
     }),
   }
@@ -138,6 +147,16 @@
     }
     .card_content_networks {
         text-align: center;
+    }
+    .card_content_networks_icon {
+        height: 22px;
+        width: 22px;
+        margin-right: 16px;
+        cursor: pointer;
+        fill: #FFFFFFFF
+    }
+    .card_content_networks_icon:hover {
+        opacity: 0.6;
     }
     .card_content_text {
         font-family: Avenir Next Cyr, sans-serif;

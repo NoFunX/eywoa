@@ -5,29 +5,34 @@
             <div 
                 class="footer_content_networks"
             >
-                <img 
-                    v-for="(network, index) of networks"
-                    :key="index"
-                    :src="network"
-                    class="mr-4"
+                <svg
+                    @click="$router.push({ path: '/contact'})"     
+                    class="footer_content_networks_icon"
                 >
+                    <use xlink:href="@/assets/sprite.svg#inst_contact"></use>
+                </svg>
+                <svg
+                    @click="$router.push({ path: '/contact'})"    
+                    class="footer_content_networks_icon"
+                >
+                    <use xlink:href="@/assets/sprite.svg#facebook_contact"></use>
+                </svg>
+                <svg
+                    @click="$router.push({ path: '/contact'})"  
+                    class="footer_content_networks_icon"
+                >
+                    <use xlink:href="@/assets/sprite.svg#viber_contact"></use>
+                </svg>
+                <svg
+                    @click="$router.push({ path: '/contact'})"  
+                    class="footer_content_networks_icon"
+                >
+                    <use xlink:href="@/assets/sprite.svg#youtube_contact"></use>
+                </svg>
             </div>
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    data: () => ({
-        networks: [
-            require('@/assets/Group.svg'),
-            require('@/assets/Vector (4).svg'), 
-            require('@/assets/Vector (2).svg'),
-            require('@/assets/Vector (3).svg')
-        ]
-    })
-}
-</script>
 
 <style scoped>
     @font-face {
@@ -71,5 +76,15 @@ export default {
         left: 50%;
         transform: translateX(-50%);
         margin-top: 5%;
+    }
+    .footer_content_networks_icon {
+        cursor: pointer;
+        height: 22px;
+        width: 22px;
+        margin-right: 16px;
+        fill: #000000;
+    }
+    .footer_content_networks_icon:hover {
+        opacity: 0.6
     }
 </style>

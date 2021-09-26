@@ -28,8 +28,10 @@
                     />
                     <span class="feedback_main_section_element_text">Best place to progress <br> your riding skills</span>
                     <div class="feedback_main_section_element_centered">
-                        <img src="@/assets/Google.svg">
-                        <span class="ml-3 mt-1">Roberto Rey</span>
+                        <svg class="icon">
+                            <use xlink:href="@/assets/sprite.svg#Google"></use>
+                        </svg>
+                        <span class="ml-3">Roberto Rey</span>
                     </div>
                 </div>
             </div>
@@ -60,8 +62,10 @@
                         Я обязательно вернусь ! 
                     </p>
                     <div class="feedback_main_section_element_case">
-                        <img src="@/assets/Vector.svg">
-                        <span class="ml-3 mt-1">Stretch Me</span>
+                        <svg class="icon_facebook">
+                            <use xlink:href="@/assets/sprite.svg#facebook_contact"></use>
+                        </svg>
+                        <span class="ml-3">Stretch Me</span>
                     </div>                   
                 </div>
             </div>
@@ -167,7 +171,7 @@ export default {
     .feedback_main_section_element_centered {
         margin-top: 10%;
         display: flex;
-        justify-content: center;
+        margin-left: 18%;
         font-family: Avenir Next Cyr, sans-serif;
         font-style: normal;
         font-weight: normal;
@@ -175,8 +179,17 @@ export default {
         line-height: 20px;
         color: #000000;
     }
+    .icon {
+        width: 22px;
+        height: 22px;
+    }
+    .icon_facebook {
+        width: 22px;
+        height: 22px;
+        fill: #306AE9;
+    }
 
-     .feedback_main_section_element_p {
+    .feedback_main_section_element_p {
         position: absolute;
         top: 3%;
         left: 14%;

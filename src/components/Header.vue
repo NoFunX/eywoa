@@ -9,9 +9,10 @@
           @click="$router.push({path: '/'})" 
           class="header_container_home"
         >
-            <img 
-              v-if="$route.path !== '/'"
-              src="@/assets/Home.svg">  
+          <img 
+            v-if="$route.path !== '/'"
+            src="@/assets/Home.svg"
+          >  
         </div>
         <nav class="header_container_nav">
           <router-link

@@ -8,15 +8,21 @@
       >
       <div class="information_networks">
         <div class="information_networks_case">
-          <img src="@/assets/TADV.svg">
+          <svg class="information_networks_case_icon">
+            <use xlink:href="@/assets/sprite.svg#TADV"></use>
+          </svg>
           <span class="information_networks_case_amount">4.9</span>
         </div>
         <div class="information_networks_case">
-          <img src="@/assets/Google.svg">
+          <svg class="information_networks_case_icon">
+            <use xlink:href="@/assets/sprite.svg#Google"></use>
+          </svg>
           <span class="information_networks_case_amount">4.8</span>
         </div>
         <div class="information_networks_case">
-          <img src="@/assets/Vector.svg">
+          <svg class="information_networks_case_facebook">
+            <use xlink:href="@/assets/sprite.svg#facebook_contact"></use>
+          </svg>
           <span class="information_networks_case_amount">4.8</span>
         </div>
       </div>
@@ -116,6 +122,15 @@
 
   .information_networks_case {
     display: flex
+  }
+  .information_networks_case_icon {
+    width: 29px;
+    height: 29px;
+  }
+  .information_networks_case_facebook {
+    width: 29px;
+    height: 29px;
+    fill: #306AE9;
   }
   .information_networks_case_amount {
     margin-left: 5px;

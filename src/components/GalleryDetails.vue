@@ -15,7 +15,9 @@
           {{ gallery.name }}
         </h1>
         <span class="cards_gallery_photos">{{ gallery.photos }}</span>
-        <img class="cards_gallery_sign" src="@/assets/Group.png">
+        <svg class="cards_gallery_sign">
+          <use xlink:href="@/assets/sprite.svg#gallery"></use>
+        </svg>
       </div>
     </div> 
 </template>
@@ -53,23 +55,23 @@ export default {
 </script>
 
 <style scoped>
-    @font-face {
-      font-family: Avenir Next Cyr;
-      src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
-      url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: Avenir Next Cyr;
-      src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
-      url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
-    }
-    .cards {
-      margin: 60px auto 100px auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 1300px;
-      width: 100%;
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-bold.woff') format('woff'),
+    url('../fonts/avenirnextcyr-bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Avenir Next Cyr;
+    src: url('../fonts/avenirnextcyr-regular.woff') format('woff'),
+    url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
+  }
+  .cards {
+    margin: 60px auto 100px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    width: 100%;
   }
   
   .cards_gallery {
@@ -78,7 +80,14 @@ export default {
     height: 400px;
     background: #E9E9E9;
     position: relative;
-    margin-top: 4%
+    margin-top: 4%;
+    cursor:pointer
+  }
+  .cards_gallery:hover .cards_gallery_sign{
+    fill: #d2d4d3;
+  }
+  .cards_gallery:hover {
+    opacity: 0.7;
   }
   .cards_gallery_title {
     font-family: Avenir Next Cyr,sans-serif;
@@ -119,5 +128,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 53px;
+    height: 53px;
+    fill: #E9E9E9
   }
 </style>

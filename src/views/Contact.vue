@@ -35,12 +35,30 @@
                     <div
                         v-if="element.images" 
                     >
-                        <img 
-                            v-for="(item, index) of element.images"
-                            :key="index"
-                            :src="item"
-                            class="mr-2"
+                       <svg
+                            @click="$router.push({ path: '/contact'})"     
+                            class="contact_section_networks_icon"
                         >
+                            <use xlink:href="@/assets/sprite.svg#inst_contact"></use>
+                        </svg>
+                        <svg
+                            @click="$router.push({ path: '/contact'})"    
+                            class="contact_section_networks_icon"
+                        >
+                            <use xlink:href="@/assets/sprite.svg#facebook_contact"></use>
+                        </svg>
+                        <svg
+                            @click="$router.push({ path: '/contact'})"  
+                            class="contact_section_networks_icon"
+                        >
+                            <use xlink:href="@/assets/sprite.svg#viber_contact"></use>
+                        </svg>
+                        <svg
+                            @click="$router.push({ path: '/contact'})"  
+                            class="contact_section_networks_icon"
+                        >
+                            <use xlink:href="@/assets/sprite.svg#youtube_contact"></use>
+                        </svg>
                     </div>
                     <span
                         v-if="element.phone" 
@@ -110,9 +128,9 @@ export default {
             },
             {
                 name: 'Phone',
-                phone: '+7971501210264',
+                phone: '+7 971 50 121 02 64',
                 desc: 'Kitesurf, Wing Foil, Hydrofoil, Shop and Events',
-                phone2: '+7971554136273',
+                phone2: '+7 971 55 413 62 73',
                 desc2: 'Wakeboard, Wakesurf, SUP, Boat Cruise'
             },
             {
@@ -145,6 +163,11 @@ export default {
        max-width: 1400px;
        width: 100%;
        margin: 0 auto; 
+    }
+    .contact_section_networks_icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 16px;
     }
     .contact_title {
         text-align: center;
@@ -286,6 +309,12 @@ export default {
 
     .contact_mail::placeholder {
         color: #000000 !important;
+        font-family: Avenir Next Cyr, sans-serif;
+        font-style: normal;
+        font-weight: 750;
+        font-size: 24px;
+        line-height: 37px;
+        color: #000000;
     }
     
     .contact_message {
