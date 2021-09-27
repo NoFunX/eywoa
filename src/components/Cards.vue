@@ -7,18 +7,24 @@
             "
             v-for="(card, index) of cards"
             :key="index"
+            @mouseover="card.mouseHover = true" 
+            @mouseleave="card.mouseHover = false"
             :style="{
               'backgroundImage': `url(${card.url})`,
-              'backgroundSize': 'cover',
+              'backgroundSize': `${card.width} ${card.height}`,
+              'background-position': '0px 0px',
               'max-width': `400px`,
               'width': '100%',
               'height': '400px',
               'position': 'relative',
               'margin-top': '4%',
-              'cursor': 'pointer'
+              'cursor': 'pointer',
+              'float': 'left',
+              'overflow':'hidden'
             }
             "
             :class="{
+                cards_card: card.name !== 'MEET NICK' && card.name !== 'CUSTOM BOARDS',
                 cards_first_card: index === 0,
                 cards_card_coach: card.name === 'MEET NICK',
                 cards_card_custom: card.name === 'CUSTOM BOARDS',
@@ -37,30 +43,36 @@
             >
                 {{ card.name }}
             </h1>
+            <transition name="report">
             <span 
-                v-if="card.coach"
+                v-if="card.coach && card.mouseHover"
                 class="cards_card_surhcoach"
             >
                 {{ card.coach }}
             </span>
-            <p 
-                v-if="card.desc"
-                class="cards_card_desc"
-                :class="{ cards_card_title_p: card.name === 'MEET NICK'}"
-            >
-                {{ card.desc }}
-            </p>
+            </transition>
+            <transition name="report">
+              <p 
+                  v-if="card.desc && card.mouseHover"
+                  class="cards_card_desc"
+                  :class="{ cards_card_title_p: card.name === 'MEET NICK'}"
+              >
+                  {{ card.desc }}
+              </p>
+            </transition>
             <img
                 class="cards_card_image" 
                 :src="card.img"
                 v-if="card.img"
             >
-            <button 
-                v-if="card.btn"
-                class="cards_card_btn"  
-            > 
-                {{ card.btn }}
-            </button>
+            <transition name="report">
+              <button 
+                  v-if="card.btn && card.mouseHover"
+                  class="cards_card_btn"  
+              > 
+                  {{ card.btn }}
+              </button>
+            </transition>
             </div>
             <div
               v-if="!card.url && card.img2"
@@ -69,14 +81,14 @@
               <transition name="report">
                 <p v-if="switcher" class="cards_card_quote"> {{ card.desc }}</p>
               </transition>
-                <div class="cards_card_named">
-                  <transition name="report">
-                    <img v-if="switcher" class="mr-4" :src="card.img">
-                  </transition>
-                  <transition name="report">
-                    <span v-if="switcher" class="cards_card_name"> {{ card.name}}</span>
-                  </transition>
-                </div>
+              <div class="cards_card_named">
+                <transition name="report">
+                  <img v-if="switcher" class="mr-4" :src="card.img">
+                </transition>
+                <transition name="report">
+                  <span v-if="switcher" class="cards_card_name"> {{ card.name}}</span>
+                </transition>
+              </div>
               <img
                   @click.stop="changeReview(card)" 
                   :src="card.img2"
@@ -111,6 +123,10 @@ export default {
                 { 
                     name: 'WAKESURF', 
                     url: require('../assets/image3.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
                     width: '400px'
                 },
                 { 
@@ -118,6 +134,8 @@ export default {
                     url: require('../assets/5ir5E9FvTBk.png'),
                     desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
                     btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
                     width: '400px'
                 },
                 {  
@@ -127,50 +145,72 @@ export default {
                     name: 'Roberto Rey',
                     img2: require('@/assets/Group23.png'),
                     quotes: require('@/assets/quotes.png'),
+                    height: '400px',
                     width: '400px'
                 },
                 { 
                     name: 'HYDROFOIL', 
                     url: require('../assets/MaskGroup.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
                     width: '400px'
                 },
                 { 
                     name: '06:00 - 18:00', 
                     desc: 'NO WEEKENDS',
                     btn: 'BOOK NOW',
+                    height: '400px',
                     width: '400px'
                 },
                 { 
                     name: 'KITESURF', 
                     url: require('../assets/Mask1Group.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
                     width: '400px'
                 },
                 { 
                     name: 'WING FOIL', 
                     url: require('../assets/Mask2Group.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
                     width: '400px'
                 },
                 { 
                     name: 'BOAT CRUISE', 
                     url: require('../assets/Rectangle180.png'),
-                    width: '400px'
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    width: '400px',
+                    height: '400px'
                 },
                 { 
                     name: 'MEET NICK',
                     coach: 'SURF COACH',
                     desc: 'Coaching since 1993', 
                     url: require('../assets/Mask3Group.png'),
-                    width: '400px'
+                    width: '400px',
+                    height: '251px'
                 },
                 { 
                     url: require('../assets/Rectangle166.png'),
                     img: require('@/assets/Group21.png'),
-                    width: '400px'
+                    mouseHover: false,
+                    width: '400px',
+                    height: '400px'
                 },
                 { 
                     url: require('../assets/image6.png'),
                     name: 'CUSTOM BOARDS',
-                    width: '850px'
+                    width: '850px',
+                    height: '400px'
                 },
             ]
         }
@@ -191,7 +231,8 @@ export default {
         }
       ],
       currentReview: 0,
-      switcher: true
+      switcher: true,
+      mouseHover: false
     }),
     methods: {
       changeReview(card) {
@@ -249,6 +290,12 @@ export default {
     justify-content: space-between;
     max-width: 1300px;
     width: 100%;
+  }
+
+  .cards_card:hover {
+    background-size:500px 500px !important;
+    background-position: -50px -50px !important;
+    transition:all 10s !important;
   }
   .cards_card__layer {
     background: rgba(36, 62, 112, 0.75);
@@ -433,6 +480,7 @@ export default {
     height: 400px;
     cursor: pointer
   }
+
   .cards_card_custom_boards {
     font-family: Avenir Next Cyr, sans-serif;
     font-style: normal;

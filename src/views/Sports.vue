@@ -31,25 +31,48 @@
                 { 
                     name: 'WAKESURF', 
                     url: require('../assets/image3.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     name: 'WAKEBOARD', 
                     url: require('../assets/5ir5E9FvTBk.png'),
                     desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
-                    btn: 'READ MORE'
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     name: 'HYDROFOIL', 
                     url: require('../assets/MaskGroup.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
     
                 { 
                     name: 'KITESURF', 
                     url: require('../assets/Mask1Group.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     name: 'WING FOIL', 
                     url: require('../assets/Mask2Group.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
             ]
         })

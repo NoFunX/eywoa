@@ -118,6 +118,9 @@
         max-width: 285px !important;
         width: 100%;
         height: 244px !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important
     }
     .card {
         position: relative;

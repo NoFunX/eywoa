@@ -51,7 +51,6 @@
         background: #F5F5F5;
         margin: 0 auto;
         position: relative;
-        max-width:  1400px;
         width: 100%;
     }
     .footer_content_span {

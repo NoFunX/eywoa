@@ -65,29 +65,33 @@
     url('../fonts/avenirnextcyr-regular.woff2') format('woff2');
   }
   .header {
-    padding: 0 2%;
-    max-width:  1400px;
+    padding: 0 4%;
     width: 100%;
     height: 60px;
     z-index: 9999;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #FFFFFF;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
   }
   .header_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     
   }
 
   .header_container_menu {
     margin-top: 17px;
+    position: absolute;
+    left: 0
   }
   .header_container_home{
     margin-top: 12px;
     cursor: pointer;
     width: 42px;
+    position: absolute;
+    left: 16%
   }
 
   .router-link-exact-active {
@@ -127,6 +131,8 @@
 
   .header_container_contact {
     margin-top: 17px;
+    position: absolute;
+    right: 0
   }
 
 </style>

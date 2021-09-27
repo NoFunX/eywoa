@@ -31,18 +31,38 @@
                 { 
                     name: 'BOARD REPAIR', 
                     url: require('../assets/Mask10Group.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     name: 'BOAT CRUISE', 
                     url: require('../assets/Rectangle180.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     name: 'ACTION SHOTS', 
                     url: require('../assets/image3.png'),
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '400px'
                 },
                 { 
                     url: require('../assets/image6.png'),
-                    name: 'CUSTOM BOARDS'
+                    name: 'CUSTOM BOARDS',
+                    desc: 'Improve your spin and invert in the best set up \n that you can find. Always flat water, pro coach, wake according to your scills',
+                    btn: 'READ MORE',
+                    mouseHover: false,
+                    height: '400px',
+                    width: '850px'
                 },
             ]
         })

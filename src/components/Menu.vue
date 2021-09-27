@@ -114,11 +114,13 @@
         max-width: 500px !important;
         width: 100%;
         height: 785px;
+        top: 0 !important;
+        left: 0 !important;
     }
 
     .card_menu {
         margin-top: 4%;
-        margin-left: 8%;
+        margin-left: 13%;
         font-family: Avenir Next Cyr, sans-serif;
         font-style: normal;
         font-weight: 750;
